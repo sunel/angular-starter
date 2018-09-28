@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,11 @@ const routes: Routes = [
     path: 'features',
     component: FeaturesComponent,
     data: { title: 'apptrans.menu.features' }
+  },
+  {
+    path: '404',
+    component: NotfoundComponent,
+    data: { title: 'apptrans.menu.404' }
   }
 ];
 
