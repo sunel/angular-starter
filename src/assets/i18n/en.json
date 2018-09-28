@@ -1,0 +1,20 @@
+{
+    "apptrans.title": "Angular Get Started",
+    "apptrans.title.short": "Angular",
+    "apptrans.header.github": "Project Github Repository",
+    "apptrans.footer.changelog": "Show changelog",
+    "apptrans.menu.about": "About",
+    "apptrans.menu.features": "Features",
+    "apptrans.menu.examples": "Examples",
+    "apptrans.menu.settings": "Settings",
+    "apptrans.menu.login": "Sign in",
+    "apptrans.menu.logout": "Logout",
+    "apptrans.about.change-theme": "Change Theme",
+    "apptrans.about.check-blogs": "or check blogs about",
+    "apptrans.features.title": "Features",
+    "apptrans.settings.title": "Settings",
+    "apptrans.settings.general": "General",
+    "apptrans.settings.general.placeholder": "Language",
+    "apptrans.settings.general.language.en": "English",
+    "apptrans.settings.general.language.de": "German"
+  }
