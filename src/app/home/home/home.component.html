@@ -1,3 +1,13 @@
-<p>
-  home works!
-</p>
+<nav mat-tab-nav-bar class="d-none d-sm-flex">
+    <a mat-tab-link
+       *ngFor="let menu of menus"
+       [routerLink]="menu.link"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{menu.label | translate}}
+    </a>
+</nav>
+
+<div>
+  <router-outlet #o="outlet"></router-outlet>
+</div>

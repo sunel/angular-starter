@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="main-heading">{{ 'apptrans.home.stocks.title' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-3">
+      <form autocomplete="false">
+        <mat-form-field>
+          <input matInput [placeholder]="'apptrans.home.stocks.symbol' | translate"
+                 [value]="stocks.symbol"
+                 (keyup)="onSymbolChange($event.target.value)">
+        </mat-form-field>
+      </form>
+      <p>
+        {{ 'apptrans.home.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
+        TWTR, SNAP, TSLA...
+      </p>
+      <br>
+    </div>
+    <div class="col-md-6 col-lg-4 offset-lg-1">
+      <mat-spinner *ngIf="stocks.loading"></mat-spinner>
+      <mat-card *ngIf="stocks.stock">
+        <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></mat-card-title>
+        <mat-card-subtitle>
+          <p [ngClass]="{ negative: stocks.stock.changeNegative }">
+            <mat-icon fontSet="fas" *ngIf="stocks.stock.changePositive" fontIcon="fa-caret-up"></mat-icon>
+            <mat-icon fontSet="fas" *ngIf="stocks.stock.changeNegative" fontIcon="fa-caret-down"></mat-icon>            
+            {{stocks.stock.change}} ({{stocks.stock.changePercent}})
+          </p>
+        </mat-card-subtitle>
+        <mat-card-content>{{stocks.stock.exchange}}</mat-card-content>
+      </mat-card>
+      <p *ngIf="stocks.error" class="error">
+        <mat-icon fontSet="fas" fontIcon="fa-exclamation-triangle"></mat-icon>
+        <br><br>
+        <span>
+          {{ 'apptrans.home.stocks.error1' | translate }}
+          <span class="symbol">{{stocks.symbol}}</span>
+          {{ 'apptrans.home.stocks.error2' | translate }}
+        </span>
+      </p>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>

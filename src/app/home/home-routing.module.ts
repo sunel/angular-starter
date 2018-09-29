@@ -2,19 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { AsyncComponent } from './async/async.component';
+import { AsyncComponent } from './async/components/async.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     data: { title: 'apptrans.menu.home' },
-    children: [
-      {
-        path: '',
-        redirectTo: 'async',
-        pathMatch: 'full'
-      },
+    children: [      
       {
         path: 'async',
         component: AsyncComponent,

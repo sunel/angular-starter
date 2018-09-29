@@ -8,9 +8,8 @@ import { Stock } from './stock-market.model';
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 
 @Injectable()
-export class AsyncService {
-
-  constructor(private httpClient: HttpClient) { }
+export class StockMarketService {
+  constructor(private httpClient: HttpClient) {}
 
   retrieveStock(symbol: string): Observable<Stock> {
     return this.httpClient
